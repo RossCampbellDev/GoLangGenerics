@@ -22,6 +22,13 @@ func MapThis(values []T, mapFunc func(T) T) []T {
 }
 
 
+// make a map with generic types
+// this means that our keys will be any type from the "comparable" list, and our values will be ints OR strings
+// important to know - map keys can ONLY come from this list!
+// type CustomMap[string]int
+type CustomMap[T Comparable, V int | string] map[T]V
+
+
 
 type CustomAttr interface {
   constraints.Ordered
